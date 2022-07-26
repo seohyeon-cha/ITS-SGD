@@ -50,7 +50,7 @@ for p0 = 1:length(tx_power)
             % Channel realization
             H = diag(h)*T;
             f1 = real(Theta'*(H*H')*Theta);
-            ratec(b0) = log(1+pow*f1);
+            ratec(b0) = log2(1+pow*f1);
         end
         rate(ite) = mean(ratec);
     end
