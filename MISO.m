@@ -25,7 +25,7 @@ for p0 = 1:length(tx_power)
                 h = h + hl.* channel_ht(theta_l_epoch(l,1),phi_l_epoch(l,1),N_IRS,d,lambda);
             end
             h = h./sqrt(L);
-            ratec(b0) = log(1+pow/N_IRS.*real(h'*h));
+            ratec(b0) = log2(1+pow/N_IRS.*real(h'*h));
         end
         rate(ite) = mean(ratec);
     end
