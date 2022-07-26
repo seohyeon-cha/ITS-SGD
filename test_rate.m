@@ -13,7 +13,7 @@ function f = test_rate(IRS_phase_up, T, pow, path_gain, theta_l_epoch, phi_l_epo
         % Channel realization
         H = diag(h)*T;
         f0 = real(IRS_phase_up'*(H*H')*IRS_phase_up);
-        ratec(ite) = log(1+pow*f0);
+        ratec(ite) = log2(1+pow*f0);
     end
     f= mean(ratec);
 end
