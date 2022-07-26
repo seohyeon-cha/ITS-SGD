@@ -15,7 +15,7 @@ r_m = reshape(r_matrix,[N_IRS,1]);
 k0 = lambda * sqrt(rho_srf*G_BS*G_IRS)/(4*pi*r_avg);
 
 T = k0*exp(-1j*2*pi*r_m/lambda);
-T = 10*T;
+% T = 10*T;
 
 %% SNR 따라서, rate 구하는 거 (iteration 100번) 
 tx_power = linspace(-10, 30, 10); %dBm
