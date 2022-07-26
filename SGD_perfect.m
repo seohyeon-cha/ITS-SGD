@@ -51,7 +51,7 @@ for p0 = 1:length(tx_power)
             H = diag(h)*T;
             Theta_opt = exp(1j.*angle((H*H')*Theta));
             f1 = real(Theta_opt'*(H*H')*Theta_opt);
-            ratec(b0) = log(1+pow*f1);
+            ratec(b0) = log2(1+pow*f1);
         end
         rate(ite) = mean(ratec);
     end
