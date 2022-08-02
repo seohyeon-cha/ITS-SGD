@@ -3,7 +3,7 @@ line=2;
 close all
 
 % MISO
-load('MISO.mat','tx_power','rate_w','N_IRS');
+load('MISO.mat','tx_power','rate_w','N_UPA');
 plot(tx_power, rate_w,'ro-','LineWidth',line);
 grid on
 hold on
