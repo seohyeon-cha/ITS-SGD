@@ -4,9 +4,9 @@ load('channel.mat','phi_L','theta_L','path_gain','IRS_phase_vector','iteration',
 %% T matrix generation
 lambda = 3e8/(28e9); 
 d = lambda/2;
-Rd = (4*d*sqrt(N_IRS))/sqrt(pi);
+Rd = (d*sqrt(N_IRS))/sqrt(pi); % Rd 줄일 수록 rate 커짐
+theta_0 = atan((sqrt(N_IRS)*d/2)/(Rd));
 
-theta_0 = atan(sqrt(2)*sqrt(N_IRS)*d/2/Rd);
 rho_srf = 1;
 G_BS = 2/(1-cos(theta_0));
 G_IRS = 2;
@@ -18,7 +18,7 @@ T = k0*exp(-1j*2*pi*r_m/lambda);
 % T = 10*T;
 
 %% SNR 따라서, rate 구하는 거 (iteration 100번) 
-tx_power = linspace(-10, 30, 10); %dBm
+tx_power = linspace(-10, 30, 9); %dBm
 rate_w = zeros(1,length(tx_power));
 
 for p0 = 1:length(tx_power)
