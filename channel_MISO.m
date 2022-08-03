@@ -33,7 +33,7 @@ IRS_phase_vector = exp(1j.*rand(N_UPA,1,iteration).*2.*pi);
 % Make batch size of realizations 
 for j0 = 1:iteration
     phi_L(:,:,j0) = 2/3*pi*(-1+2*rand(L,1));
-    theta_L(:,:,j0) = 1/3*pi*(-1+2*rand(L,1));
+    theta_L(:,:,j0) = 1/2*pi*(-1+2*rand(L,1));
 end
 
 
