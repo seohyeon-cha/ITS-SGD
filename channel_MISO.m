@@ -9,16 +9,16 @@ L = 4; % number of channel paths
 
 % Path loss 
 l = 100; %[m] distance between transmitter and receiver
-eta = 2; % pathloss exponent ------------------------------------------------------------------2.2/2.8/3.5 도 해보기
+eta = 2; % pathloss exponent 
 
 % noise power = bandwidth W x noise PSD No x noise figure Nf
 % W = 100 MHz, No = - 174 dBm/Hz, Nf = 6 dB
-noise = (100*1e6)*(1e-3*10^(-174/10))*(10^(6/10)); % [W] 계산해보면 -118 dBm임 
+noise = (100*1e6)*(1e-3*10^(-174/10))*(10^(6/10)); 
 lambda = 3e8/(28e9); % f = 28GHz
 pathloss = (lambda/(4*pi))^2/l^2;
 path_gain = sqrt(pathloss/noise);
 d = lambda/2;
-% d = 1; % distance 설정 어떻게 할지 
+% d = 1; 
 
 % Channel gain
 iteration = 200;
