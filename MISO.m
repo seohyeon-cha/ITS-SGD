@@ -1,11 +1,10 @@
 clear;
 load('channel_MISO.mat','phi_L','theta_L','path_gain','IRS_phase_vector','iteration','N_y','N_z','N_BS','L','lambda','d');
 
-%% SNR 따라서, rate 구하는 거 (iteration 100번) 
+
 tx_power = linspace(-10, 30, 10); %dBm
 rate_w = zeros(1,length(tx_power));
-% active antenna 일때는 d 바꿔야 하는 거 아닌가? (해보니까 결과는 크게 안 다르긴 함) 
-% 일반 MISO 설정을 어떻게 할지 생각해보기 
+
 N_UPA = N_y * N_z;
 for p0 = 1:length(tx_power)
     fprintf('tx_power=%d\n',tx_power(p0));
